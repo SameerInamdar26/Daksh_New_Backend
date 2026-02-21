@@ -37,11 +37,8 @@ const newsSchema = new mongoose.Schema({
     type: Number,
     default: 0
   },
-  likes: {          // ✅ persistent like count
-    type: Number,
-    default: () => Math.floor(Math.random() * (100 - 20 + 1)) + 20
-  },
   comments: [commentSchema]  // ✅ store comments
+  // ❌ likes field removed
 });
 
 module.exports = mongoose.model('News', newsSchema);
